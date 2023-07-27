@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Form Booking Tempat Makanan</title>
+    <link rel="stylesheet" href="formstyle.css">
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
+
+<body>
+    <nav class="navbar navbar-inverse">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#">🥘</a>
+            </div>
+            <div class="collapse navbar-collapse" id="myNavbar">
+                <ul class="nav navbar-nav">
+                    <li><a href="login.html">
+                            <img src="login.png" alt="Login" width="20" height="20">
+                        </a></li>
+                    <li class="active"><a href="index.html">Home</a></li>
+                    <li><a href="form.html">Booking</a></li>
+                    <li><a href="form_2.html">Pesan online</a></li>
+                </ul>
+                <ul class="nav navbar-nav" style="float: right;">
+                    <li class="navbar-text" id="datetime"></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <h2>Form Booking Tempat Makanan</h2>
+    <form onsubmit="showAlert(event)">
+        <label for="nama">Nama:</label>
+        <input type="text" id="nama" name="nama" required><br><br>
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required><br><br>
+
+        <label for="telepon">Nomor Telepon:</label>
+        <input type="tel" id="telepon" name="telepon" required><br><br>
+
+        <label for="tanggal">Tanggal Booking:</label>
+        <input type="date" id="tanggal" name="tanggal" required><br><br>
+
+        <label for="jam">Jam Booking:</label>
+        <input type="time" id="jam" name="jam" required><br><br>
+
+        <label for="jumlah">Jumlah Tamu:</label>
+        <input type="number" id="jumlah" name="jumlah" required><br><br>
+
+        <input type="submit" value="Submit">
+    </form>
+
+    <script>
+        function showAlert(event) {
+            event.preventDefault(); // Mencegah pengiriman formulir untuk menampilkan alert
+
+            // Mendapatkan nilai inputan formulir
+            const nama = document.getElementById("nama").value;
+            const email = document.getElementById("email").value;
+            const telepon = document.getElementById("telepon").value;
+            const tanggal = document.getElementById("tanggal").value;
+            const jam = document.getElementById("jam").value;
+            const jumlah = document.getElementById("jumlah").value;
+
+            // Membuat pesan alert
+            const message = `Data Booking Tempat Makan:\nNama: ${nama}\nEmail: ${email}\nNomor Telepon: ${telepon}\nTanggal Booking: ${tanggal}\nJam Booking: ${jam}\nJumlah Tamu: ${jumlah}`;
+
+            // Menampilkan alert
+            alert(message);
+        }
+
+
+    </script>
+
+</body>
+
+</html>
